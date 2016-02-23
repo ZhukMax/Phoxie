@@ -13,9 +13,9 @@ define('AdminDir', 'admin');
 
 // Data Base
 define('DB_HOST', 'localhost');
-define('DB_USER', 'phox');
-define('DB_PASS', '4q915jmwX0Yk');
-define('DB_NAME', 'phox');
+define('DB_USER', '');
+define('DB_PASS', '');
+define('DB_NAME', '');
 define('DB_PREFIX', 'ph_');
 
 define('SITE_URL', 'http://'.$_SERVER['HTTP_HOST'].'/');
