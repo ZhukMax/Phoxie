@@ -1,2 +1,7 @@
 .gitignore
 tmp/
+logs/
+.bash_logout
+.bashrc
+.profile
+chmod
