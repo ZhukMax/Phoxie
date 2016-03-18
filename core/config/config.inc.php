@@ -8,14 +8,14 @@ define('CORE_PATH', BASE_PATH . 'core/');
 define('ControllersDir', CORE_PATH . 'controllers/');
 define('ModelsDir', CORE_PATH . 'models/');
 define('ViewsDir', CORE_PATH . 'view/');
-define('PluginsDir', CORE_PATH . 'classes/');
+define('ClassesDir', CORE_PATH . 'classes/');
 define('AdminDir', 'admin');
 
 // Data Base
 define('DB_HOST', 'localhost');
-define('DB_USER', '');
-define('DB_PASS', '');
-define('DB_NAME', '');
+define('DB_USER', 'phoxie');
+define('DB_PASS', 'Yx2-ih3CkVl7');
+define('DB_NAME', 'phoxie');
 define('DB_PREFIX', 'ph_');
 
 define('SITE_URL', 'http://'.$_SERVER['HTTP_HOST'].'/');

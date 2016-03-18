@@ -24,7 +24,7 @@ use Phalcon\Mvc\Application;
 
 try {
 	
-	define('BASE_PATH', realpath(NULL) . '/');
+	define('BASE_PATH', realpath('../') . '/');
 
 	// Hard include config files
 	require BASE_PATH . 'core/config/config.inc.php';

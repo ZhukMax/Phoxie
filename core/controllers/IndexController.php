@@ -1,8 +1,8 @@
 <?php
 /*
- * Ph2x CMS for Phalcon PHP
+ * Phoxie CMS for Phalcon PHP
  *
- * Copyright 2015 by Zhuk Max.
+ * Copyright 2016 by Zhuk Max.
  * All rights reserved.
  *
  * This program is free software; you can redistribute it and/or modify it under
@@ -26,23 +26,25 @@
  *
  * @indexAction
  */
+use Phoxie\Classes\PagesClass;
 
-class IndexController extends Core
+class IndexController extends PagesClass
 {
     /**
      *
-     * get Pages's data
+     * get Page
      */
 	public function indexAction()
 	{
 		$alias = $this->dispatcher->getParam('alias');
 		if (!$alias) $alias = 'index';
 		$page = Pages::findFirst(array("alias = '".$alias."'"));
-		if (!$page)
+		if (!$page) {
 			$this->dispatcher->forward(array("controller" => "system", "action" => "notfound"));
-		else {
+			$this->view->disable();
+		}/*else {
 			$this->view->page = $page;
 			$this->view->pick($page->templates->path);
-		}
+		}*/
 	}
 }

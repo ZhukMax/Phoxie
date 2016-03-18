@@ -1,6 +1,6 @@
 <?php
 /**
- *  Ph2x Services config-file
+ *  Phoxie Services config-file
  */
 
     // Dependency Injection
@@ -37,16 +37,5 @@
     });
 
 	// Session create
-	include CORE_PATH . "classes/session-database.inc.php";
-	$di->set('session', function() use ($connection) {
-
-		$session = new Phalcon\Session\Adapter\Database(array(
-			'db' => $connection,
-			'table' => 'ph_session_data'
-		));
-
-		$session->start();
-		return $session;
-	});
 	
 ?>

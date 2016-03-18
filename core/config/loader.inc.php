@@ -10,9 +10,14 @@
     $loader->registerDirs(array(
         ControllersDir,
         ModelsDir,
-		PluginsDir
+		ClassesDir
     ))->register();
 	
+	$loader->registerNamespaces(
+		array(
+		   "Phoxie\Classes"      => ClassesDir
+		)
+	);
+	
 	require CORE_PATH . 'config/services.inc.php';
-	require CORE_PATH . 'classes/core.class.php';
 ?>

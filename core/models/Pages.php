@@ -1,6 +1,4 @@
 <?php
-namespace Phoxie\Pages\Models
-
 use Phalcon\Mvc\Model, Phalcon\Mvc\Model\Relation;
 use Phalcon\Mvc\Model\Validator\Uniqueness;
 use Phalcon\Mvc\Model\Validator\PresenceOf;
@@ -30,12 +28,12 @@ class Pages extends Model
 		$this->useDynamicUpdate(true);
 
 		/* Relationships */
-		$this->hasMany('id', 'Phoxie\Pages\Models\Extradata', 'page_id', array(
+		$this->hasMany('id', 'Extradata', 'page_id', array(
 			'foreignKey' => array(
                 'action' => Relation::ACTION_CASCADE
             )
         ));
-		$this->belongsTo("template", "Phoxie\Pages\Models\Templates", "id", array(
+		$this->belongsTo("template", "Templates", "id", array(
 			"foreignKey" => array(
 				"message" => "No such a template."
 			)
