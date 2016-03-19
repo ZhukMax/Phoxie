@@ -1,6 +1,4 @@
 <?php
-namespace Phoxie\Pages\Models
-
 use Phalcon\Mvc\Model, Phalcon\Mvc\Model\Relation;
 use Phalcon\Mvc\Model\Validator\Uniqueness;
 use Phalcon\Mvc\Model\Validator\PresenceOf;
@@ -23,7 +21,7 @@ class Extratypes extends Model
 		$this->useDynamicUpdate(true);
 
 		/* Relationships */
-		$this->hasMany('id', 'Phoxie\Pages\Models\Extrafields', 'type', array(
+		$this->hasMany('id', 'Extrafields', 'type_id', array(
 			'foreignKey' => array(
                 'action' => Relation::ACTION_CASCADE
             )

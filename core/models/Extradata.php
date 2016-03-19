@@ -1,6 +1,4 @@
 <?php
-namespace Phoxie\Pages\Models
-
 use Phalcon\Mvc\Model, Phalcon\Mvc\Model\Relation;
 use Phalcon\Mvc\Model\Validator\PresenceOf;
 Model::setup(
@@ -28,12 +26,12 @@ class Extradata extends Model
         );
 
 		/* Relationships */
-		$this->belongsTo("xfield_id", "Phoxie\Pages\Models\Extrafields", "id", array(
+		$this->belongsTo("xfield_id", "Extrafields", "id", array(
 			"foreignKey" => array(
 				"message" => "No such a Extrafield."
 			)
 		));
-		$this->belongsTo("page_id", "Phoxie\Pages\Models\Pages", "id", array(
+		$this->belongsTo("page_id", "Pages", "id", array(
 			"foreignKey" => array(
 				"message" => "No such a Page."
 			)

@@ -17,7 +17,7 @@ class Pages extends Model
 	public $description;
 	public $content;
 	public $alias;
-	public $template;
+	public $template_id;
 	public $pubdate;
 	public $editdate;
 	public $parent;
@@ -33,7 +33,7 @@ class Pages extends Model
                 'action' => Relation::ACTION_CASCADE
             )
         ));
-		$this->belongsTo("template", "Templates", "id", array(
+		$this->belongsTo("template_id", "Templates", "id", array(
 			"foreignKey" => array(
 				"message" => "No such a template."
 			)

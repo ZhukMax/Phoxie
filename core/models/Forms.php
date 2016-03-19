@@ -1,6 +1,4 @@
 <?php
-namespace Phoxie\Pages\Models
-
 use Phalcon\Mvc\Model, Phalcon\Mvc\Model\Relation;
 
 class Forms extends Model
@@ -14,7 +12,7 @@ class Forms extends Model
         $this->setSource(DB_PREFIX."forms");
 
 		/* Relationships */
-		$this->hasMany("id", "Phoxie\Pages\Models\Tabs", "form", array(
+		$this->hasMany("id", "Tabs", "form_id", array(
 			"foreignKey" => array(
                 "action" => Relation::ACTION_CASCADE
             )

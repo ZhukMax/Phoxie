@@ -1,0 +1,8 @@
+Changelog for Foxie CMS.
+
+0.1.0-prealfa
+==============
+- Application core
+- Controller Index for site pages
+- Models for pages and extra-fields
+- Volt template engine

@@ -14,7 +14,7 @@
 	});
 	
 	// MySQL setups
-	$connection = new \Phalcon\Db\Adapter\Pdo\Mysql(array(
+	/*$connection = new \Phalcon\Db\Adapter\Pdo\Mysql(array(
 		"host" => DB_HOST,
 		"username" => DB_USER,
 		"password" => DB_PASS,
@@ -23,6 +23,20 @@
 			PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'UTF8'"
 		)
 	));
+    $di->set('db', function() use ($connection)
+	{
+		return $connection;
+    });*/
+	
+	// PostgreSQL setups
+	$config = array(
+		"host" => "localhost",
+		"dbname" => "phoxie",
+		"username" => "postgres",
+		"password" => "1"
+	);
+
+	$connection = new \Phalcon\Db\Adapter\Pdo\Postgresql($config);
     $di->set('db', function() use ($connection)
 	{
 		return $connection;

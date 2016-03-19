@@ -1,6 +1,4 @@
 <?php
-namespace Phoxie\Pages\Models
-
 use Phalcon\Mvc\Model, Phalcon\Mvc\Model\Relation;
 
 class Formfiels extends Model
@@ -15,12 +13,12 @@ class Formfiels extends Model
         $this->setSource(DB_PREFIX."formfiels");
 
 		/* Relationships */
-		$this->belongsTo("xfield_id", "Phoxie\Pages\Models\Extrafields", "id", array(
+		$this->belongsTo("xfield_id", "Extrafields", "id", array(
 			"foreignKey" => array(
 				"message" => "No such a Extrafield."
 			)
 		));
-		$this->belongsTo("tab_id", "Phoxie\Pages\Models\Tabs", "id", array(
+		$this->belongsTo("tab_id", "Tabs", "id", array(
 			"foreignKey" => array(
 				"message" => "No such a Tab."
 			)
