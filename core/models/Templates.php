@@ -20,6 +20,7 @@ class Templates extends Model
             )
         ));
 	}
+	
 	public function validation()
     {
 		$this->validate(
