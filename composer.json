@@ -1,0 +1,12 @@
+{
+  "name": "Phoxie",
+  "authors": [
+    {
+      "name": "Zhuk Max",
+      "email": "zhukmax@ya.ru"
+    }
+  ],
+  "require": {
+    "twitter/bootstrap": "3.3.*"
+  }
+}
