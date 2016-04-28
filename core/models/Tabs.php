@@ -3,6 +3,9 @@ use Phalcon\Mvc\Model, Phalcon\Mvc\Model\Relation;
 
 class Tabs extends Model
 {
+	/*
+	 * 
+	*/
 	public $id;
 	public $title;
 	public $caption;
