@@ -1,2 +1,2 @@
 # Phoxie
-Phoxie is CMS for Phalcon PHP
+Phoxie is Admin-panel prepack for Phalcon PHP
