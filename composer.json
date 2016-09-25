@@ -7,6 +7,6 @@
     }
   ],
   "require": {
-    "twitter/bootstrap": "3.3.*"
+    "twitter/bootstrap": "3.*.*"
   }
 }
