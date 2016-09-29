@@ -1,0 +1,8 @@
+# IntelliJ - PhpStorm and PyCharm
+.idea
+*.iml
+*.ipr
+*.iws
+
+composer.lock
+vendor
