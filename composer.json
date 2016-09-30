@@ -15,7 +15,11 @@
   ],
   "require": {
     "php": ">=5.5.0",
-    "twitter/bootstrap": "3.*.*"
+    "twitter/bootstrap": "3.*.*",
+	"components/font-awesome": "4.*.*"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "2.*"
   },
   "autoload": {
     "psr-4": {
