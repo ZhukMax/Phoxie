@@ -1,7 +1,17 @@
 <?php
+
 namespace Zhukmax\Phoxie;
 
-class SkeletonClass
+use Zhukmax\Phoxie\Exceptions\PhoxieException;
+
+/**
+ * Class Phoxie
+ *
+ * Основной класс работы с API
+ *
+ * @package Zhukmax\Phoxie
+ */
+class Phoxie
 {
 
     /**
