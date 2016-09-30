@@ -14,7 +14,7 @@
     }
   ],
   "require": {
-    "php": ">=5.5.0",
+    "php": ">=7.0.1",
     "twitter/bootstrap": "3.*.*",
 	"components/font-awesome": "4.*.*"
   },
@@ -26,6 +26,11 @@
   "autoload": {
     "psr-4": {
       "Zhukmax\\Phoxie\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Zhukmax\\Phoxie\\Test\\": "tests"
     }
   }
 }
