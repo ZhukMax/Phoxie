@@ -4,6 +4,7 @@
 *.ipr
 *.iws
 
-composer.lock
 vendor
+build
 index.php
+composer.lock
