@@ -11,7 +11,7 @@ Phoxie is Admin-panel prepack for Phalcon PHP. I worked now
 Via Composer
 
 ``` bash
-$ composer require zhukmax/phoxie
+$ php composer.phar create-project zhukmax/phoxie /var/www/path/to/project
 ```
 
 ## Usage
