@@ -1,40 +1,42 @@
 <?php
-/*
- * Phoxie CMS for Phalcon PHP
- *
- * Copyright 2016 by Zhuk Max.
- * All rights reserved.
- *
- * This program is free software; you can redistribute it and/or modify it under
- * the terms of the GNU General Public License as published by the Free Software
- * Foundation; either version 2 of the License, or (at your option) any later
- * version.
- *
- * This program is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
- * details.
- *
- * You should have received a copy of the GNU General Public License along with
- * this program; if not, write to the Free Software Foundation, Inc., 59 Temple
- * Place, Suite 330, Boston, MA 02111-1307 USA
- *
- */
-use Phalcon\Mvc\Application;
+use Phalcon\Di\FactoryDefault;
+
+error_reporting(E_ALL);
+
+define('BASE_PATH', dirname(__DIR__));
+define('APP_PATH', BASE_PATH . '/app');
 
 try {
-	
-	define('BASE_PATH', realpath('../') . '/');
 
-	// Hard include config files
-	require BASE_PATH . 'core/config/config.inc.php';
-	require CORE_PATH . 'config/loader.inc.php';
+    /**
+     * The FactoryDefault Dependency Injector automatically registers
+     * the services that provide a full stack framework.
+     */
+    $di = new FactoryDefault();
 
-    // Execute the request handler
-    $application = new Application($di);
+    /**
+     * Read services
+     */
+    include APP_PATH . "/config/services.php";
+
+    /**
+     * Get config service for use in inline setup below
+     */
+    $config = $di->getConfig();
+
+    /**
+     * Include Autoloader
+     */
+    include APP_PATH . '/config/loader.php';
+
+    /**
+     * Handle the request
+     */
+    $application = new \Phalcon\Mvc\Application($di);
+
     echo $application->handle()->getContent();
 
-// If Errors with Phalcon use
-} catch(\Phalcon\Exception $e) {
-	echo "PhalconException: ", $e->getMessage();
+} catch (\Exception $e) {
+    echo $e->getMessage() . '<br>';
+    echo '<pre>' . $e->getTraceAsString() . '</pre>';
 }
