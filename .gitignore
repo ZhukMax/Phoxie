@@ -5,6 +5,4 @@
 *.iws
 
 vendor
-build
-index.php
 composer.lock
