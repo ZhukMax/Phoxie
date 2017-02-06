@@ -13,6 +13,7 @@ use Phalcon\Flash\Direct as Flash;
  */
 $di->setShared('router', function () {
     $router = new Router();
+    $router->removeExtraSlashes(true);
 
     $router->setDefaultModule('frontend');
     $router->setDefaultNamespace('Phoxie\Modules\Frontend\Controllers');

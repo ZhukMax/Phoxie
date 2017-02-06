@@ -1,40 +1,29 @@
 <?php
 
-$router = $di->get("router");
+$config  = $di->getConfig();
+$router  = $di->get("router");
+$backend = [
+    "namespace"  => $config->backend->namespace,
+    "module"     => $config->backend->name
+];
 
-//foreach ($application->getModules() as $key => $module) {
-//    $namespace = str_replace('Module','Controllers', $module["className"]);
-//    $router->add('/'.$key.'/:params', [
-//        'namespace' => $namespace,
-//        'module' => $key,
-//        'controller' => 'index',
-//        'action' => 'index',
-//        'params' => 1
-//    ])->setName($key);
-//    $router->add('/'.$key.'/:controller/:params', [
-//        'namespace' => $namespace,
-//        'module' => $key,
-//        'controller' => 1,
-//        'action' => 'index',
-//        'params' => 2
-//    ]);
-//    $router->add('/'.$key.'/:controller/:action/:params', [
-//        'namespace' => $namespace,
-//        'module' => $key,
-//        'controller' => 1,
-//        'action' => 2,
-//        'params' => 3
-//    ]);
-//}
-
-$router->add(
-    "/admin",
-    [
-        "namespace"  => "Phoxie\\Modules\\Backend\\Controllers",
-        "module"     => "backend",
+/**
+ * Index route for backend
+ */
+$router->addGet(
+    $config->backend->path,
+    array_merge($backend, [
         "controller" => "index",
         "action"     => "index"
-    ]
-);
+    ])
+)->setName($config->backend->name);
+
+$router->addPost(
+    $config->backend->path . "/:controller/:action/:params",
+    array_merge($backend, [
+        "controller" => 1,
+        "action"     => 2
+    ])
+)->setName($config->backend->name . "-api");
 
 $di->set("router", $router);
