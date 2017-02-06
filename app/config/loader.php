@@ -1,13 +1,24 @@
 <?php
 
-$loader = new \Phalcon\Loader();
+use Phalcon\Loader;
+
+$loader = new Loader();
 
 /**
- * We're a registering a set of directories taken from the configuration file
+ * Register Namespaces
  */
-$loader->registerDirs(
-    [
-        $config->application->controllersDir,
-        $config->application->modelsDir
-    ]
-)->register();
+$loader->registerNamespaces([
+    'Phoxie\Models' => APP_PATH . '/common/models/',
+    'Phoxie'        => APP_PATH . '/common/library/',
+]);
+
+/**
+ * Register module classes
+ */
+$loader->registerClasses([
+    'Phoxie\Modules\Frontend\Module' => APP_PATH . '/modules/frontend/Module.php',
+    'Phoxie\Modules\Backend\Module'  => APP_PATH . '/modules/backend/Module.php',
+    'Phoxie\Modules\Cli\Module'      => APP_PATH . '/modules/cli/Module.php'
+]);
+
+$loader->register();

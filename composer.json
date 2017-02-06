@@ -1,36 +1,17 @@
 {
   "name": "zhukmax/phoxie",
-  "description": "Phoxie is Admin-panel for Phalcon PHP",
-  "keywords": [
-    "phoxie", "admin", "phalcon"
-  ],
-  "version": "0.1.0",
-  "license": "MIT",
+  "description": "Phoxie is empty project with admin-panel for Phalcon PHP",
+  "license": "Apache-2.0",
   "authors": [
     {
-      "name": "Zhuk Max",
-      "email": "zhukmax@ya.ru",
-      "role": "Developer"
+      "name": "Max Zhuk",
+      "email": "zhukmax@ya.ru"
     }
   ],
   "require": {
-    "php": ">=7.0.1",
-    "twitter/bootstrap": "3.*.*",
-	"components/font-awesome": "4.*.*"
+    "php": ">=7.0.1"
   },
   "require-dev": {
-    "squizlabs/php_codesniffer": "2.*",
-    "phpunit/phpunit" : "5.*",
-    "phalcon/devtools": "dev-master"
-  },
-  "autoload": {
-    "psr-4": {
-      "Zhukmax\\Phoxie\\": "src"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "Zhukmax\\Phoxie\\Test\\": "tests"
-    }
+    "phalcon/devtools": "3.0.x-dev"
   }
 }

@@ -1,5 +1,7 @@
 <?php
 
+namespace Phoxie\Modules\Frontend\Controllers;
+
 class IndexController extends ControllerBase
 {
 
