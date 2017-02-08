@@ -107,3 +107,4 @@ fabric.properties
 
 # Config file of Phoxie app
 app/config/config.php
+!/feap/

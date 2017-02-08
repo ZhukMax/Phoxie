@@ -8,7 +8,7 @@ $backend = [
 ];
 
 /**
- * Index route for backend
+ * Index route for backend.
  */
 $router->addGet(
     $config->backend->path,
@@ -18,8 +18,11 @@ $router->addGet(
     ])
 )->setName($config->backend->name);
 
+/**
+ * API route for backend.
+ */
 $router->addPost(
-    $config->backend->path . "/:controller/:action/:params",
+    $config->backend->path . "/:controller/:action",
     array_merge($backend, [
         "controller" => 1,
         "action"     => 2

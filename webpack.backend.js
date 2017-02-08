@@ -5,9 +5,10 @@ const webpack            = require('webpack');
 const ExtractTextPlugin  = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const AssetsPlugin       = require('assets-webpack-plugin');
-var jsName               = NODE_ENV === 'production' ? '[name].[chunkhash].js' : '[name].js';
-var cssName              = NODE_ENV === 'production' ? 'styles.[contenthash].css' : 'styles.css';
-var fileName             = NODE_ENV === 'production' ? 'url?name=[path][name].[hash:6].[ext]' : 'url?name=[path][name].[ext]';
+
+let jsName               = NODE_ENV === 'production' ? '[name].[chunkhash].js' : '[name].js';
+let cssName              = NODE_ENV === 'production' ? 'styles.[contenthash].css' : 'styles.css';
+let fileName             = NODE_ENV === 'production' ? 'url-loader?name=[path][name].[hash:6].[ext]' : 'url-loader?name=[path][name].[ext]';
 
 module.exports = {
     context: __dirname + '/app/modules/backend/src',
@@ -27,34 +28,23 @@ module.exports = {
         aggregateTimeout: 100
     },
     plugins: [
-        new webpack.NoErrorsPlugin(),
+        new webpack.NoEmitOnErrorsPlugin(),
         new webpack.DefinePlugin({
             NODE_ENV: JSON.stringify(NODE_ENV)
         }),
         new ExtractTextPlugin(cssName)
     ],
 
-    resolve: {
-        modulesDirectories: ['node_modules'],
-        extensions:         ['', '.js', '.jsx']
-    },
-
-    resolveLoader: {
-        modulesDirectories: ['node_modules'],
-        moduleTemplates:    ['*-loader', '*'],
-        extensions:         ['', '.js']
-    },
-
     module: {
         loaders: [
             {
                 test: /\.css$/,
-                loader: ExtractTextPlugin.extract('style', 'css!postcss')
+                loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' })
             },
             {
                 test:    /\.jsx?$/,
                 exclude: [/node_modules/, /public/],
-                loader:  'babel',
+                loader:  'babel-loader',
                 query: {
                     presets: [
                         "es2015",
@@ -68,10 +58,10 @@ module.exports = {
             },
             {
                 test: /\.json$/,
-                loader: 'json'
+                loader: 'json-loader'
             },
             {
-                test:   /\.(png|jpg|svg|gif)$/,
+                test:   /\.(png|jpg|svg|gif|ico)$/,
                 loader: fileName + '&limit=4096'
             },
             {
@@ -81,7 +71,7 @@ module.exports = {
         ]
     },
 
-    devtool: NODE_ENV === 'development' ? 'cheap-source-map' : null
+    devtool: NODE_ENV === 'development' ? 'cheap-source-map' : false
 };
 
 if (NODE_ENV === 'production') {
@@ -95,7 +85,7 @@ if (NODE_ENV === 'production') {
         })
     );
     module.exports.plugins.push(
-        new CleanWebpackPlugin([ 'public/assets/' ], {
+        new CleanWebpackPlugin([ 'public/assets/feap/' ], {
             root:    __dirname,
             verbose: true,
             dry:     false
@@ -104,7 +94,7 @@ if (NODE_ENV === 'production') {
     module.exports.plugins.push(
         new AssetsPlugin({
             filename: 'assets.json',
-            path:     __dirname + "/public/assets"
+            path:     __dirname + "/public/assets/feap"
         })
     );
 }
