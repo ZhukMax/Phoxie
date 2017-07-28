@@ -1,4 +1,5 @@
-#Changelog
+## Changelog
+
 All Notable changes to `zhukmax/phoxie` will be documented in this file
 
 ### --- 0.2.0 ---
