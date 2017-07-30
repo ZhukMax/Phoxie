@@ -12,6 +12,6 @@
     "php": ">=7.0.1"
   },
   "require-dev": {
-    "phalcon/devtools": "3.0.x-dev"
+    "phalcon/devtools": "3.*"
   }
 }
