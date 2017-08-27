@@ -1,1 +1,0 @@
-<div id="root" style="height: 100%">Loading</div>

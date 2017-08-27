@@ -10,13 +10,11 @@
   "author": "ZhukMax <zhukmax@ya.ru>",
   "license": "Apache-2.0",
   "scripts": {
-    "backend": "NODE_ENV=production webpack --config webpack.backend.js",
-    "backend-server": "./node_modules/.bin/webpack-dev-server --config webpack.backend.js --inline --hot --colors"
+    "dev": "webpack",
+    "prod": "NODE_ENV=production webpack"
   },
   "dependencies": {
-    "feap": "1.*",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "feap": "1.*"
   },
   "devDependencies": {
   }

@@ -9,7 +9,8 @@
     }
   ],
   "require": {
-    "php": ">=7.0.1"
+    "php": ">=7.0.1",
+    "firebase/php-jwt": "v5.0.0"
   },
   "require-dev": {
     "phalcon/devtools": "3.*"
