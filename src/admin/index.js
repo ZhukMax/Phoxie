@@ -4,8 +4,7 @@ import Feap from 'feap';
 
 let navigationItems = {
     "users": "Пользователи",
-    "media": "Медиа-файлы",
-    "polls": "Опросы"
+    "media": "Медиа-файлы"
 };
 
 const AdminFront = (
