@@ -1,2 +1,4 @@
 version: '3'
 services:
+  app:
+    image: php:7.1-fpm-alpine
