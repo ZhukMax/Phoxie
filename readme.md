@@ -7,8 +7,9 @@
 Phoxie is empty project with admin-panel for Phalcon PHP.
 
 ## Install
-
-git clone httpd://github.com/ZhukMax/Phoxie mynewproject
+```bash
+$ git clone https://github.com/ZhukMax/Phoxie.git mynewproject
+```
 
 ## Change log
 
