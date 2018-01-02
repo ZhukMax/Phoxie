@@ -2,5 +2,8 @@ version: '3'
 services:
   nginx:
     image: nginx:alpine
+
   api:
     image: php:7.1-fpm-alpine
+    ports:
+      - 9000:9000
