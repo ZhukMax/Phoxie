@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import Feap from 'feap';
 
 let navigationItems = {
-    "users": "Пользователи",
-    "media": "Медиа-файлы"
+    "users": "Users",
+    "media": "Media files"
 };
 
 const AdminFront = (
