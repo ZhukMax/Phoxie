@@ -1,6 +1,6 @@
 {
   "name": "phoxie",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Phoxie is empty project with admin-panel for Phalcon PHP",
   "main": "index.js",
   "repository": "https://github.com/ZhukMax/phoxie.git",
